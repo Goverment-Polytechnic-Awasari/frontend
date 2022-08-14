@@ -1,9 +1,12 @@
-//import React, { useContext } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginInitiate } from "../../../redux/actions";
 import "./GhodeSubNavbar.css";
 import {Link} from 'react-router-dom';
 import GhodeMadamImg from "../../../assets/img/ghode-madam.svg"
 
-function eventHandle() {
+
+const eventHandle = () => {
   let arrow = document.querySelectorAll(".arrow");
   for (var i = 0; i < arrow.length; i++) {
     arrow[i].addEventListener("click", (e) => {
@@ -19,7 +22,17 @@ function eventHandle() {
   });
 }
 
-function subNavbar() {
+function SubNavbar() {
+
+  const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  const handleAuth = () => {
+    if(currentUser) {
+      dispatch(loginInitiate());
+    }
+  };
+
   return (
     <div>
       <div className="sidebar close">
@@ -189,13 +202,13 @@ function subNavbar() {
           </li>
 
           <li>
-            <Link to="/">
+            <Link onClick={handleAuth} >
               <i className="bx bx-log-out"></i>
               <span className="link_name">Logout</span>
             </Link>
             <ul className="sub-menu blank">
               <li>
-                <Link className="link_name" to="/">
+                <Link className="link_name" onClick={handleAuth}>
                   Logout
                 </Link>
               </li>
@@ -225,4 +238,4 @@ function subNavbar() {
   );
 }
 
-export default subNavbar;
+export default SubNavbar;
