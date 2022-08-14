@@ -1,0 +1,31 @@
+.LecturesInWeek {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  justify-content: center;
+  margin-top: -5rem;
+  margin-left: 5rem !important;
+}
+
+.box {
+  width: 100%;
+  height: auto;
+  background: #ffffff;
+  border: 0.5px solid #e4e4e4;
+  box-sizing: border-box;
+  box-shadow: 35px 12px 23px rgba(201, 176, 255, 0.25);
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding: 2%;
+}
+
+.liwTitle{
+    margin-bottom: 2rem;
+}
+
+.ttw1 {
+  width: 11rem;
+  background: #dafa80;
+  border-radius: 7px;
+  padding: 1.5rem;
+  margin-right: 1.5rem;
+}
