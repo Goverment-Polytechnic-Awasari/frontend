@@ -19,7 +19,7 @@ function STLoginForm() {
 
     useEffect(() => {
         if (currentUser) {
-            history.push('/home');
+            history.push('/ST-Dashbord');
         }
     },[currentUser, history]);
 
