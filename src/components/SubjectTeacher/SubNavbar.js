@@ -1,9 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginInitiate } from "../../../redux/actions";
-import "./GhodeSubNavbar.css";
+import "./SubNavbar.css";
 import {Link} from 'react-router-dom';
-import GhodeMadamImg from "../../../assets/img/ghode-madam.svg"
+import GhodeMadamImg from "../../assets/img/ghode-madam.svg"
 
 
 const eventHandle = () => {
@@ -23,15 +21,6 @@ const eventHandle = () => {
 }
 
 function SubNavbar() {
-
-  const { currentUser } = useSelector((state) => state.user);
-  const dispatch = useDispatch();
-
-  const handleAuth = () => {
-    if(currentUser) {
-      dispatch(loginInitiate());
-    }
-  };
 
   return (
     <div>
@@ -202,15 +191,15 @@ function SubNavbar() {
           </li>
 
           <li>
-            <Link onClick={handleAuth} >
+            <a href="/">
               <i className="bx bx-log-out"></i>
               <span className="link_name">Logout</span>
-            </Link>
+            </a>
             <ul className="sub-menu blank">
               <li>
-                <Link className="link_name" onClick={handleAuth}>
+                <a href="/" className="link_name">
                   Logout
-                </Link>
+                </a>
               </li>
             </ul>
           </li>

@@ -3,10 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import UserRoute from "./components/UserRoute";
 
-// Priyanka Ghode Routes.....
+// Subject Teacher Routes.....
 
-import Dashbord from "./pages/SubjectTeacherPages/PriyankaGhode/Dashbord";
-import Home from "./pages/Home";
+import STDashbord from "./pages/SubjectTeacherPages/Dashbord";
 
 function App() {
   return (
@@ -14,8 +13,7 @@ function App() {
       <div className="app">
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route path="/ST-Dashbord" component={Dashbord} />
-          <UserRoute path="/home" component={Home} />
+          <UserRoute path="/st-dashbord" component={STDashbord} />
         </Switch>
       </div>
     </BrowserRouter>
