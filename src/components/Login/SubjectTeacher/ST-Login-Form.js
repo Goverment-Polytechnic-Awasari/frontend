@@ -19,7 +19,7 @@ function STLoginForm() {
 
     useEffect(() => {
         if (currentUser) {
-            history.push('/home');
+            history.push('/st-dashbord');
         }
     },[currentUser, history]);
 
@@ -33,7 +33,7 @@ function STLoginForm() {
         dispatch(loginInitiate(email, password));
         setState({...state, email: '', password: ''});
     }
-    const hnadleChange = (e) => {
+    const handleChange = (e) => {
         let { name, value } = e.target;
         setState({...state, [name]: value});
     }
@@ -47,7 +47,7 @@ function STLoginForm() {
           name="email"
           id="STemail"
           placeholder="Email ID / Username"
-          onChange={hnadleChange}
+          onChange={handleChange}
           value={email}
           autoFocus
           required
@@ -60,7 +60,7 @@ function STLoginForm() {
          id="STpassword"
          placeholder="Enter Password"
          value={password}
-         onChange={hnadleChange}
+         onChange={handleChange}
          className='inputBox'
          required />
         <button type="submit" className="login-btnss">Login</button>
