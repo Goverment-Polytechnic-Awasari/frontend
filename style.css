@@ -1,0 +1,43 @@
+.myDiv {
+			border: 2px outset;
+			border-color:#cccccf;
+			border-radius:5px;
+			background-color: white;
+			text-align: center;
+			width: 800px;
+			margin:20px;
+			height:460px;
+			box-shadow:8px 10px 14px #ccccff;	
+			position: relative;
+			position: absolute;
+		}
+
+.btn{
+		color:white;
+		border: 1px outset;
+		background-color:dodgerblue;
+		padding:14px 28px;
+		font-size:16px;
+		cursor:pointer;
+		display:inline-block;
+		box-shadow:7px 10px 12px #ccccff;
+	}
+	.btn:hover{
+				background:#ff6600;
+				box-shadow:7px 10px 12px #ffcc66;
+			  }
+			
+	.image{
+			margin-top:40px;
+			width:120px;
+			height:120px;
+	}
+	.image2{
+			margin-top:20px;
+			width:70px;
+			height:70px;
+	}
+	
+	.h1{
+			font-size:40px;
+	}
