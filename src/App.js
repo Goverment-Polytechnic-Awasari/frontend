@@ -4,7 +4,6 @@ import Login from "./pages/Login";
 import UserRoute from "./components/UserRoute";
 
 // Subject Teacher Routes.....
-
 import STDashbord from "./pages/SubjectTeacherPages/Dashbord";
 
 function App() {
