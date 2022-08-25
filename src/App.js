@@ -2,9 +2,9 @@ import "./App.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import UserRoute from "./components/UserRoute";
-
-// Subject Teacher Routes.....
-import STDashbord from "./pages/SubjectTeacherPages/Dashbord";
+import STDashbord from "./pages/SubjectTeacherPages/STDashbord";
+import CTDashbord from "./pages/ClassTeacherPages/CTDashbord";
+import HODdashbord from "./pages/HODPages/HODdashbord";
 
 function App() {
   return (
@@ -12,7 +12,9 @@ function App() {
       <div className="app">
         <Switch>
           <Route exact path="/" component={Login} />
-          <UserRoute exact path="/st-dashbord" component={STDashbord} />
+          <UserRoute path="/st-dashbord" component={STDashbord} />
+          <Route path="/ct-dashbord" component={CTDashbord} />
+          <Route path="/hod-dashbord" component={HODdashbord} />
         </Switch>
       </div>
     </BrowserRouter>

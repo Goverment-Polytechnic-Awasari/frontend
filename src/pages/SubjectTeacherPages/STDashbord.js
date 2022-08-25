@@ -1,7 +1,7 @@
 import React from 'react'
 import SubNavbar from "../../components/SubjectTeacher/SubNavbar";
 
-function Dashbord() {
+function STDashbord() {
   return (
     <>
         <SubNavbar/>
@@ -9,4 +9,4 @@ function Dashbord() {
   )
 }
 
-export default Dashbord;
+export default STDashbord;
