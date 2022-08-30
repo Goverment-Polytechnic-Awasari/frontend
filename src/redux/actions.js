@@ -1,5 +1,6 @@
 import * as types from "./actionTypes";
 import { auth } from "../firebase";
+import RoleBaseAuth from '../api/rolebaseAuth'
 
 //login
 const loginStart = () => ({
@@ -35,15 +36,28 @@ export const setUser = (user) => ({
 });
 
 export const loginInitiate = (email, password) => {
-  return function (dispatch) {
+  return function(dispatch){
     dispatch(loginStart());
-    auth
-      .signInWithEmailAndPassword(email, password)
-      .then(({ user }) => {
-        dispatch(loginSuccess(user));
-      })
-      .catch((error) => dispatch(loginFail(error.message)));
-  };
+    var userA=null ;
+    auth.signInWithEmailAndPassword(email,password).then(({user})=>{
+        const role = {
+            uid: user.uid,
+            email: user.email,
+          };
+          userA = user;
+        const promis = RoleBaseAuth.post("/role", role);
+        return promis;
+        
+    }).then((res,error)=>{
+        
+            const New = {
+                authUser:userA,
+                role:res.role
+            }
+            dispatch(loginSuccess(New));
+      
+}).catch((error)=>dispatch(loginFail(error.message)));
+}
 };
 
 export const logoutInitiate = () => {

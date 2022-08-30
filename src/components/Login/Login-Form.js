@@ -19,7 +19,9 @@ function STLoginForm() {
 
     useEffect(() => {
         if (currentUser) {
-            history.push('/st-dashbord');
+            console.log("Heello thisis is not -------------------------");
+            console.log(currentUser.authUser.uid)
+            history.push('/');
         }
     },[currentUser, history]);
 
@@ -31,7 +33,7 @@ function STLoginForm() {
             return;
         }
         dispatch(loginInitiate(email, password));
-        setState({...state, email: '', password: ''});
+        setState({email: '', password: ''});
     }
     const handleChange = (e) => {
         let { name, value } = e.target;

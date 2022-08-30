@@ -8,15 +8,15 @@ const LoadingToRedirect = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCount((currentCount) => --currentCount);
-    }, 1000);
+    }, 1);
 
-    count === 0 && history.push("/");
+    count === 0 && history.push("/login");
     return () => clearInterval(interval);
   }, [count, history]);
 
   return (
     <div>
-      <p>Redirecting you in {count} seconds</p>
+      {/* <p>Redirecting you in {count} seconds</p> */}
     </div>
   );
 };
